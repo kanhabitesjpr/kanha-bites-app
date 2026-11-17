@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KANHA BITES</string>
+    <string name="title_activity_main">KANHA BITES</string>
+    <string name="package_name">com.kanhabites.app</string>
+    <string name="custom_url_scheme">com.kanhabites.app</string>
+</resources>
