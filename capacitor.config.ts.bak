@@ -1,0 +1,9 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.kanhabites.app',
+  appName: 'KANHA BITES',
+  webDir: 'dist'
+};
+
+export default config;
