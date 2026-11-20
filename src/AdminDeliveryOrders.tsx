@@ -82,7 +82,7 @@ export default function AdminDeliveryOrders() {
             onChange={(e) =>
               updateOrder(order.id, {
                 rider_id: e.target.value || null,
-                fulfillment_by: e.target.value ? "rider" : null,
+                ...(e.target.value ? { fulfillment_by: "rider" } : {}),
                 status: e.target.value ? "assigned" : "pending",
               })
             }

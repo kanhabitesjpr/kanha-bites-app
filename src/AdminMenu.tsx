@@ -26,7 +26,7 @@ export default function AdminMenu() {
         .order("item_name"),
       supabase
         .from("daily_menus")
-        .select("id, menu_date, menu_slot, category, menu_item_id, notes")
+        .select("id, menu_date, meal_slot, category, menu_item_id, notes")
         .order("menu_date", { ascending: false })
         .limit(50),
     ]);
@@ -61,7 +61,7 @@ export default function AdminMenu() {
 
     const { error } = await supabase.from("daily_menus").insert({
       menu_date: menuDate,
-      menu_slot: slot,
+      meal_slot: slot,
       category,
       menu_item_id: itemId,
       notes: notes.trim() || null,
@@ -163,7 +163,7 @@ export default function AdminMenu() {
         return (
           <div key={menu.id} style={cardStyle}>
             <strong>{menu.menu_date}</strong>
-            <p>{menu.menu_slot} — {item?.item_name || "Menu Item"}</p>
+            <p>{menu.meal_slot} — {item?.item_name || "Menu Item"}</p>
             <p>{menu.category}</p>
             {menu.notes && <p>{menu.notes}</p>}
             <button

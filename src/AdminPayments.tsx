@@ -18,7 +18,7 @@ export default function AdminPayments() {
 
     const { data, error } = await supabase
       .from("payment_submissions")
-      .select("id, subscription_id, amount, utr_number, screenshot, status, created_at")
+      .select("id, subscription_id, amount, utr_number, screenshot_path, status, created_at")
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -119,7 +119,7 @@ export default function AdminPayments() {
               {new Date(payment.created_at).toLocaleString("en-IN")}
             </p>
 
-            {payment.screenshot && (
+            {payment.screenshot_path && (
   <p>
     {signedUrls[payment.id] ? (
       <a
@@ -132,7 +132,7 @@ export default function AdminPayments() {
     ) : (
       <button
         onClick={() =>
-          viewScreenshot(payment.id, payment.screenshot)
+          viewScreenshot(payment.id, payment.screenshot_path)
         }
       >
         पेमेंट स्क्रीनशॉट देखें

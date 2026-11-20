@@ -121,7 +121,7 @@ export default function CustomerPayment({ user }: Props) {
           subscription_id: subscriptionId,
           amount: Number(selected.amount),
           utr_number: utr.trim(),
-          screenshot: filePath,
+          screenshot_path: filePath,
           status: 'pending',
         });
 

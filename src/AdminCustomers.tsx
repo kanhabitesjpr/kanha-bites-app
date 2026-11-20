@@ -127,7 +127,7 @@ export default function AdminCustomers() {
               <div key={child.id}>
                 <p>
                   🧒 {child.child_name}
-                  {child.school_name ? ' — $DIL0' : ""}
+                  {child.school_name ? " — " + child.school_name : ""}
                   {child.active ? " (Active)" : " (Inactive)"}
                 </p>
               </div>
